@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  v2ray:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-12-12T20:04:56.6555764+08:00
+    description: A Helm chart for Kubernetes
+    digest: 1e9dc62989c791da9161633bb28304e0723df2b8b30c4dfd6e33325e2bdbfeb3
+    name: v2ray
+    urls:
+    - v2ray-0.1.0.tgz
+    version: 0.1.0
+generated: 2019-12-12T20:04:56.651587+08:00
