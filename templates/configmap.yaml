@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app.kubernetes.io/name: {{ include "v2ray.name" . }}
+    helm.sh/chart: {{ include "v2ray.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+data:
+  config.json: |
+    {
+      "inbounds": [
+        {
+          "port": {{ .Values.vmess.port }}, // Vmess 协议服务器监听端口
+          "protocol": "vmess",
+          "settings": {
+            "clients": [
+              {
+                "id": "{{ .Values.vmess.uuid | default uuidv4 }}"
+              }
+            ]
+          }
+        },
+        {
+          "port": {{ .Values.ss.port }}, // SS 协议服务端监听端口
+          "protocol": "shadowsocks",
+          "settings": {
+            "method": "{{ .Values.ss.method }}", // 加密方式
+            "password": "{{ .Values.ss.password | default (derivePassword 1 "long" (.Release.Time | toString) .Release.Name .Chart.Name ) }}" //密码
+          }
+        }
+      ],
+      "outbounds": [
+        {
+          "protocol": "freedom",
+          "settings": {}
+        }
+      ]
+    }
