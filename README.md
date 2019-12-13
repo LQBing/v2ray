@@ -2,6 +2,10 @@
 
 [V2ray](https://github.com/LQBing/V2ray) aims to collect information about Kubernetes clusters. This information will help the Kubernetes development team to understand what people are doing with it, and to make it a better product.
 
+## Reference
+
+https://www.chenshi.net/how%20to%20deploy%20v2ray%20client%20with%20helm%20on%20k8s.html
+
 ## TL;DR;
 
 ```console
