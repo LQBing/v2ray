@@ -5,7 +5,7 @@
 ## TL;DR;
 
 ```console
-$ helm install stable/V2ray
+$ helm install v2ray/V2ray
 ```
 
 ## Introduction
@@ -59,7 +59,7 @@ Parameter | Description | Default
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
-$ helm install stable/V2ray --name my-v2ray \
+$ helm install v2ray/v2ray --name my-v2ray \
     --namespace v2ray \
     --set ss.port=1285 \
     --set ss.method=aes-128-gcm \
@@ -71,7 +71,7 @@ $ helm install stable/V2ray --name my-v2ray \
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install stable/V2ray --name my-v2ray -f values.yaml
+$ helm install v2ray/v2ray --name my-v2ray -f values.yaml
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
